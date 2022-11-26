@@ -1,0 +1,91 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<!-- Main Section -->
+
+<div id="wrapper">
+  <div id="sidebar-wrapper" style="background-color: #00160a;">
+      <ul class="sidebar-nav">
+          <li class="sidebar-brand"> <a href="{% url 'admin' %}">ADMIN</a></li>
+          <li> <a href="{% url 'users' %}">Users</a></li>
+          <li> <a href="{% url 'user-documents' %}">Users Documents</a></li>
+          <li> <a href="{% url 'leaverequest' %}">Leave Request(<span>{{unreadCount}}</span>)</a></li>
+      </ul>
+  </div>
+  <div class="page-content-wrapper">
+      <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
+        <main class="messagePage my-xl">
+          <div class="content-box">
+            <div class="message">
+              <a class="backButton" href="{% url 'leaverequest' %}"><i class="fa fa-angle-left"></i></a>
+              <br><br>
+                <div class="message__body"><b>User:</b><br> {{leaver.student}}</div><br>
+                <div class="message__author"><b>Leave Type:</b><br> {{leaver.leave}}</div><br>
+                <div class="message__author"><b>Requested On:</b><br> {{leaver.created}}</div><br>
+                <div class="message__body"><b>Reason:</b><br> {{leaver.reason|linebreaksbr}}</div>
+                <br>
+                <div class="message__body"><b>Action</b></div>
+                
+                <div class="message__check">
+                  <form method="POST">
+                    {% csrf_token %}
+
+                    {% if leaver.status == 'Pending' %}
+                    <label>
+                      <input type="radio" name="radio" checked value="Pending" />
+                      <span style="color: rgb(255,182,29);" >Pending</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="radio" value="Approve" />
+                      <span style="color: green;" >Approve</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="radio" value="Reject" />
+                      <span style="color: red;">Reject</span>
+                    </label><br>
+                    
+                    {% elif leaver.status == 'Approve' %}
+                    <label>
+                      <input type="radio" name="radio"  value="Pending" />
+                      <span style="color: rgb(255,182,29);">Pending</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="radio" checked value="Approve"/>
+                      <span style="color: green;">Approve</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="radio"  value="Reject"/>
+                      <span style="color: red;">Reject</span>
+                    </label><br>
+
+                    {% elif leaver.status == 'Reject' %}
+                    <label>
+                      <input type="radio" name="radio"  value="Pending" />
+                      <span style="color: rgb(255,182,29);">Pending</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="radio" value="Approve"/>
+                      <span style="color: green;">Approve</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="radio" checked value="Reject"/>
+                      <span style="color: red;">Reject</span>
+                    </label><br>
+                    {% endif %}
+
+                    <br>
+                    <div class="form-group">
+                      <input class="btn" type="submit" value="Done" style="background-color: rgb(255,182,29);">
+                    </div>
+
+                  </form>
+                </div>
+
+            </div>
+          </div>
+        </main>
+      </div>
+  </div>
+</div>
+
+{% endblock content %}

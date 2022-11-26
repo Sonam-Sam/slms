@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div></div><img src="{% static 'img/image%204.png' %}"></div>
+            <div class="col-md-6 col-lg-5">
+                <div class="card special-skill-item border-0"></div>
+                <form action="#" >
+                    
+                    <p class="text-left" style="margin-bottom: 32px;width: 369px;padding: -3px;font-size: 24px;"><strong>Login</strong></p>
+                    <div class="form-group">
+                        <label for="email">Username</label>
+                        <input class="form-control" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Password</label>
+                        <input class="form-control" type="password" id="password" required>
+                    </div>
+                    <button class="btn btn-block" type="submit" style="background-color: #ffb61d;color: rgb(0,0,0);">Login</button>
+                    <div class="text-right" style="margin-top: 10px;">
+                        <a class="text-right" href="#" style="color: rgb(0,0,0);">Forgot password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

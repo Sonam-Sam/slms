@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="portfolio-block hire-me">
+    <div class="container">
+        <div class="heading">
+            <h3 class="text-center" style="font-family: Montserrat, sans-serif;">Get in Touch !</h3>
+            <p class="text-center"><strong>Contact us for more info &amp; details</strong></p>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 text-center footer-navigation"><!-- <img src="{% static 'img/icon/email%201.png' %}"> -->
+                    <i class="fa fa-envelope-o" aria-hidden="true" style="color: rgb(255,182,29);"></i>
+                    <p style="font-size: 13px;"><strong>kezang@gmail.com</strong></p>
+                </div>
+                <div class="col-sm-6 col-md-4 text-center footer-navigation"><!-- <img src="{% static 'img/icon/phone-call%201.png' %}"> -->
+                    <i class="fa fa-phone" aria-hidden="true" style="color: rgb(255,182,29);"></i>
+                    <p style="color: rgb(0,0,0);font-size: 13px;"><strong>+975-17730265</strong></p>   
+                </div>
+                <div class="col-md-4 text-center footer-about"><!-- <img src="{% static 'img/icon/maps-and-flags%201.png' %}"> -->
+                    <i class="fa fa-map-marker" aria-hidden="true" style="color: rgb(255,182,29);"></i>
+                    <p style="color: rgb(0,2,3);"><strong>Gyalpozhing College</strong></p>
+                </div>
+            </div>
+        </div>
+        <form action="" method="POST">
+            
+            {% csrf_token %}
+            <div class="form-group" style="font-family: Montserrat, sans-serif;"><label for="subject" ><strong>Name</strong></label><input class="form-control" type="text" name="name" required></div>
+            <div class="form-group"><label for="email" style="font-family: Montserrat, sans-serif;" ><strong>Email</strong></label><input class="form-control" type="email" id="email" name="email" required></div>
+            <div class="form-group"><label for="message" style="font-family: Montserrat, sans-serif;" ><strong>Message</strong></label><textarea class="form-control" id="message" style="height: 200px;" name="message" required></textarea></div>
+            <div class="form-group">
+            <div class="form-row">
+                <div class="col"><button class="btn btn-block" type="submit" style="font-family: Montserrat, sans-serif;background-color: #ffb61d;color: #000000;"><strong>Submit</strong></button></div>
+            </div>
+            </div>
+        </form>
+    </div>
+</section>
+ 
+{% endblock content %}

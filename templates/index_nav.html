@@ -1,0 +1,195 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="wrapper">
+    <div id="sidebar-wrapper" style="background-color: #00160a;">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand"> <a href="{% url 'account' %}">MY ACCOUNT</a></li>
+            <li> <a href="{% url 'leave' %}">Leave Section</a></li>
+            <li> <a href="{% url 'applyleave' %}">Apply Leave</a></li>
+            <li> <a href="{% url 'documents' %}">Documents</a></li>
+        </ul>
+    </div>
+
+    <div class="page-content-wrapper">
+        <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
+
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div></div><img src="{% static 'img/image%2012.png' %}"></div>
+                        <div class="col-md-6">
+                            <div></div>
+                            <h3 class="name" style="color: rgb(255,182,29);">STUDENT LEAVE MANAGEMENT SYSTEM</h3>
+                            <p class="description">A student leave management system enables students to request time off and allows the SSO to approve those requests.&nbsp;The fact that the majority of pupils have attendance shortages is a common issue in the college.<br></p>
+                            <div
+                                class="text-left" style="margin-bottom: 5px;">
+                                <a href="{% url 'contact_us_nav' %}"><button class="btn" type="button" style="background-color: rgb(255,182,29);">Contact</button></a>
+                            
+                            </div>
+                    </div>
+                </div>
+                <div class="row" style="background-color: #f8f8f8;padding-top: 10px;">
+                    <div class="col-md-6">
+                        <div></div>
+                        <h3 class="name" style="color: rgb(255,182,29);">Apply your leave from anywhere!</h3>
+                        <p class="description">Without any issues, you can easily apply for the leave from anywhere. At your own time apply for the leave and get get yourself to save time.&nbsp;<br></p>
+                        <div class="text-left" style="margin-bottom: 5px;">
+                            <a href="{% url 'applyleave' %}"><button class="btn" type="button" style="background-color: rgb(255,182,29);">Apply</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div></div><img src="{% static 'img/image%206.png' %}"></div>
+                </div>
+            </div>
+            </div>
+            <div style="margin-top: 13px;">
+                <!-- <p class="text-center hero-subtitle" style="color: rgb(0,0,0);font-size: 40px;"><strong>Types of Leave</strong></p> -->
+                <h1 style="text-align: center;">Types of Leave</h1><br>
+                <div class="carousel slide" data-ride="carousel" id="carousel-1">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="jumbotron hero-nature carousel-hero">
+                                <h1 class="hero-title">Sick</h1>
+                                <p class="hero-subtitle"><br>This is a leave where if you are sick and unable to attend the class you can apply to the system for granting a leave.<br></p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="jumbotron hero-photography carousel-hero">
+                                <h1 class="hero-title">Medical</h1>
+                                <p class="hero-subtitle"><br>This is a leave where incase you want to have a leave for medical checkups or treatment.<br><br></p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="jumbotron hero-technology carousel-hero">
+                                <h1 class="hero-title">Escort</h1>
+                                <p class="hero-subtitle"><br>This is a leave where incase you are going as an escort for someone who is sick.<br><br></p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="jumbotron hero-other carousel-hero">
+                                <h1 class="hero-title">Others</h1>
+                                <p class="hero-subtitle"><br>This leave can be applied for if you want to get a leave for other than the above mentioned type of leaves.<br><br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><i class="fa fa-chevron-left"></i><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><i class="fa fa-chevron-right"></i><span class="sr-only">Next</span></a></div>
+                    <ol
+                        class="carousel-indicators">
+                        <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-1" data-slide-to="1"></li>
+                        <li data-target="#carousel-1" data-slide-to="2"></li>
+                        <li data-target="#carousel-1" data-slide-to="3"></li>
+                        </ol>
+                </div>
+            </div>
+            <section class="card-section-imagia">
+                <h1>Our Team</h1>
+                <h2>Meet our core team</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="card-container-imagia">
+                                <div class="card-imagia">
+                                    <div class="front-imagia">
+                                        <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
+                                        <div class="user-imagia"><img src="{% static 'img/IMG_20190831_194456.jpg' %}"></div>
+                                        <div class="content-imagia">
+                                            <h3 class="name-imagia">Sonam</h3>
+                                            <p class="subtitle-imagia">Backend Developer</p>
+                                            <p class="text-center">I am an enthusiastic developer.</p>
+                                        </div>
+                                        <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
+                                    </div>
+                                    <div class="back-imagia">
+                                        <div class="content-imagia content-back-imagia">
+                                            <div>
+                                                <h3 class="text-center">Details</h3>
+                                                <p class="text-center">I am a student of gyalpozhing college of information technology persuing a bechelor degree of computer science.&nbsp;</p>
+                                            </div>
+                                        </div>
+                                        <div class="footer-imagia">
+                                            <div class="social-imagia text-center">
+                                                <a href="https://www.facebook.com/SonamSam555"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://www.linkedin.com/in/sonam-sonam-41a583235/"><i class="fa fa-linkedin"></i></a>
+                                                <a href="https://twitter.com/Sonaam24"><i class="fa fa-twitter"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="card-container-imagia">
+                                <div class="card-imagia">
+                                    <div class="front-imagia">
+                                        <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
+                                        <div class="user-imagia"><img src="{% static 'img/sangay.png' %}"></div>
+                                        <div class="content-imagia">
+                                            <h3 class="name-imagia">Sangay Rinchen</h3>
+                                            <p class="subtitle-imagia">Frontend Developer</p>
+                                            <p class="text-center">Looks and feels for the users is what I prefers the most.</p>
+                                        </div>
+                                        <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
+                                    </div>
+                                    <div class="back-imagia">
+                                        <div class="content-imagia content-back-imagia">
+                                            <div>
+                                                <h3 class="text-center">Details</h3>
+                                                <p class="text-center">I am a student of gyalpozhing college of information technology persuing a bechelor degree of computer science.&nbsp;</p>
+                                            </div>
+                                        </div>
+                                        <div class="footer-imagia">
+                                            <div class="social-imagia text-center">
+                                                <a href="https://www.facebook.com/cgreenbud?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://www.linkedin.com/in/sangay-rinchen-45542b258"><i class="fa fa-linkedin"></i></a>
+                                                <a href="https://twitter.com/thatll_do7?t=lfcjIjwZDI1T3VfAWDgSdw&s=09"><i class="fa fa-twitter"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="card-container-imagia">
+                                <div class="card-imagia">
+                                    <div class="front-imagia">
+                                        <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
+                                        <div class="user-imagia"><img src="{% static 'img/ugyen.jpg' %}"></div>
+                                        <div class="content-imagia">
+                                            <h3 class="name-imagia">Ugyen Wangchuk</h3>
+                                            <p class="subtitle-imagia">UI/UX Designer</p>
+                                            <p class="text-center">Never keep the design in your heart, make it reality through UI/UX.</p>
+                                        </div>
+                                        <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
+                                    </div>
+                                    <div class="back-imagia">
+                                        <div class="content-imagia content-back-imagia">
+                                            <div>
+                                                <h3 class="text-center">Details</h3>
+                                                <p class="text-center">I am a student of gyalpozhing college of information technology persuing a bechelor degree of computer science.&nbsp;</p>
+                                            </div>
+                                        </div>
+                                        <div class="footer-imagia">
+                                            <div class="social-imagia text-center">
+                                                <a href="https://www.facebook.com/Anonymouscyhker"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://www.linkedin.com/in/ugyen-wangchuk-801b55235/"><i class="fa fa-linkedin"></i></a>
+                                                <a href="https://twitter.com/UGYENWA74296861"><i class="fa fa-twitter"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+    
+{% endblock content %}

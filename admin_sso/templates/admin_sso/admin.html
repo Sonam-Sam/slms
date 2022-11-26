@@ -1,0 +1,55 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Main Section -->
+
+<main class="settingsPage profile my-md">
+    <div id="wrapper">
+        <div id="sidebar-wrapper" style="background-color: #00160a;">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"> <a href="{% url 'admin' %}">ADMIN</a></li>
+                <li> <a href="{% url 'users' %}">User</a></li>
+                <li> <a href="{% url 'user-documents' %}">Users Documents</a></li>
+                <li> <a href="{% url 'leaverequest' %}">Leave Request</a></li>
+            </ul>
+        </div>
+
+        <div class="page-content-wrapper">
+            <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
+                <br>
+                <div class="col-md-12">
+                    <h4>&nbsp;<img src="{% static 'img/Rectangle%2046.png' %}" style="width: 20px;">&nbsp; ACCOUNT</h4>
+                </div><br> <br>
+
+                <div class="container">
+
+                    <div class="column column--1of3">
+                        <div class="card text-center">
+
+                            <div class="card__body dev">
+                                {% for x in profile %}
+                                {% if x.user == request.user %}
+                                <a class="tag tag--pill tag--main settings__btn" href="{% url 'editaccount' %}"><i class="im im-edit"></i> Edit Profile</a><br>
+                                <img class="avatar avatar--xl" src="{{ x.profile_image.url }}" />
+                                <h2 class="dev__name">{{ x.name }}</h2>
+                                <p class="dev__email">Email: {{x.email}}</p>
+                                <p class="dev__course">Gender: {{x.gender}}</p>
+                                {% endif %}
+                                {% endfor %}
+                                <div class="form-group">
+                                    <a href="{% url 'admin_password' %}"><input class="btn" type="submit" value="Change Password" style="background-color: rgb(255,182,29);"></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

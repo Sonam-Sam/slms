@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+  <!-- Main Section -->
+  <main class="home">
+    <!-- Search Result: DevList -->
+    <section class="devlist">
+      <div class="container">
+        <div class="grid grid--three">
+
+          {% for profile in profiles %}
+          <div class="column card">
+            <div class="dev">
+              <a href="{% url 'user-profile' profile.id %}" class="card__body">
+                <div class="dev__profile">
+                  <img class="avatar avatar--md" src="{{ profile.profile_image.url }}" alt="image" />
+                  <div class="dev__meta">
+                    <h3>{{profile.name}}</h3>
+                    <h5>Course: {{profile.course}}</h5>
+                    <h5>Year: {{profile.year}}</h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {% endblock content %}

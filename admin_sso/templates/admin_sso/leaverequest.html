@@ -1,0 +1,73 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="wrapper">
+    <div id="sidebar-wrapper" style="background-color: #00160a; ">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand"> <a href="{% url 'admin' %}">ADMIN</a></li>
+            <li> <a href="{% url 'users' %}">Users</a></li>
+            <li> <a href="{% url 'user-documents' %}">Users Documents</a></li>
+            <li> <a href="{% url 'leaverequest' %}">Leave Request(<span>{{unreadCount}}</span>)</a></li>
+        </ul>
+    </div>
+    <div class="page-content-wrapper">
+        <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
+           
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>&nbsp;<img src="{% static 'img/Rectangle%2046.png' %}" style="width: 20px;">&nbsp; Leave Request</h4>
+                </div>
+
+                <div class="col-md-12 search-table-col"><span class="counter pull-right"></span>
+
+                    <!-- <div class="hero-section__search">
+                        <form id="searchForm" class="form" action="{% url 'users' %}" method="get">
+                          <div class="form__field">
+                            <label for="formInput#search">Search Leave by User or Leave Status </label>
+                            <input class="input input--text" id="formInput#search" type="text" name="search_query"
+                              placeholder="Search Leave by User or Leave Status" value="{{search_query}}" />
+                          </div>
+              
+                          <input class="btn btn--sub btn--lg" type="submit" value="Search" />
+                        </form>
+                    </div> -->
+                    
+                    <div class="table-responsive table-bordered table table-hover table-bordered results">
+                        <table class="table table-bordered table-hover">
+                            <thead class="bill-header cs">
+                                <tr>
+                                    <th id="trs-hd" class="col-lg-1">User</th>
+                                    <th id="trs-hd" class="col-lg-2">Leave Type</th>
+                                    <th id="trs-hd" class="col-lg-2">Leave Status</th>
+                                    <th id="trs-hd" class="col-lg-2">Requested Date</th>
+                                    <th id="trs-hd" class="col-lg-2">Leave Details</th>
+                                </tr>
+                            </thead>
+                            
+                            {% for leave in leaverequest %}
+                            <tbody> 
+                                <tr style="align-content: left;">
+                                    
+                                    <td>{{leave.student}}</td>
+                                    <td>{{leave.leave}}</td>
+                                    <td>{{leave.status}}</td>
+                                    <td>{{leave.created}}</td>
+                                    <td><a href="{% url 'leave' leave.id %}" class="fa fa-clone" ></a></td>
+                                </tr>   
+                            </tbody>
+                            {% endfor %}
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

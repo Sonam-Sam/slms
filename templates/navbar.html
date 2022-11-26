@@ -1,0 +1,23 @@
+{% load static %}
+
+<nav class="navbar navbar-light navbar-expand-md navigation-clean navbar-inverse navbar-fixed-top">
+    <div class="container"><a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#NavbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse"
+            id="NavbarNav">
+            <ul class="nav navbar-nav text-center ml-auto" style="margin-top:13px;">
+                
+                {% if request.user.is_authenticated %}
+                <li class="nav-item text-center" role="presentation"><a class="nav-link" uk-scroll="offset:50" style="font-family: Montserrat, sans-serif;" href="{% url 'index_nav' %}">Home</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" uk-scroll="offset:100" href="{% url 'contact_us_nav' %}" style="font-family: Montserrat, sans-serif;">Contact Us</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" uk-scroll="offset:50" href="{% url 'logout' %}" style="font-family: Montserrat, sans-serif;">Logout</a></li>
+                {% else %}
+                <li class="nav-item text-center" role="presentation"><a class="nav-link" uk-scroll="offset:50" style="font-family: Montserrat, sans-serif;" href="{% url 'index' %}">Home</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" uk-scroll="offset:100" href="{% url 'sso' %}" style="font-family: Montserrat, sans-serif;">SSO</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" uk-scroll="offset:100" href="{% url 'contact_us' %}" style="font-family: Montserrat, sans-serif;">Contact Us</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" uk-scroll="offset:50" href="{% url 'login' %}" style="font-family: Montserrat, sans-serif;">Login</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" uk-scroll="offset:50" href="{% url 'admin_login' %}" style="font-family: Montserrat, sans-serif;">Admin Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="wrapper">
+    <div id="sidebar-wrapper" style="background-color: #00160a;">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand"> <a href="{% url 'admin' %}">ADMIN</a></li>
+            <li> <a href="{% url 'users' %}">Users</a></li>
+            <li> <a href="{% url 'user-documents' %}">Users Documents</a></li>
+            <li> <a href="{% url 'leaverequest' %}">Leave Request</a></li>
+        </ul>
+    </div>
+
+    <div class="page-content-wrapper">
+        <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
+            <br>
+            <div class="row">
+
+                <div class="col-md-12">
+                    <section class="hero-section text-center">
+                        <div class="container container--narrow">
+                          <div class="hero-section__box">
+                            <h2>Users <span>Documents</span></h2>
+                          </div>
+                  
+                          <div class="hero-section__search">
+                            <form id="searchForm" class="form" action="{% url 'user-documents' %}" method="get">
+                              <div class="form__field">
+                                <label for="formInput#search">Search users documents</label>
+                                <input class="input input--text" id="formInput#search" type="text" name="search_query"
+                                  placeholder="Search documents by Name or Student ID" value="{{search_query}}" />
+                              </div>
+                  
+                              <input class="btn btn--sub btn--lg" type="submit" value="Search" />
+                            </form>
+                          </div>
+                        </div>
+                    </section>
+                    <br><br>
+                    <div class="row articles">
+                        
+                        {% for document in documents %}
+                        
+                        <div class="col-sm-6 col-md-4 item"><img class="img-fluid" src="{{document.featured_image.url}}">
+                            <h3 class="name">{{document.title}}</h3>
+                            <p class="description">{{document.description}}<br><b>User: {{document.owner}}</b><br>{{document.created}}<br></p>
+                        </div>
+                        {% endfor %}
+                    </div>
+             
+                </div>
+            </div>
+            {% include 'pagination.html' with queryset=documents custom_range=custom_range %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+

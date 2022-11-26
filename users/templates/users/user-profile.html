@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Main Section -->
+<main class="profile my-md">
+  <div class="container">
+    
+      <div class="column column--1of3">
+        <div class="card text-center">
+          <div class="card__body dev">
+            <img class="avatar avatar--xl" src="{{ profile.profile_image.url }}" />
+            <h2 class="dev__name">{{profile.name}}</h2>
+            <p class="dev__studentid">Student Id: {{profile.studentid}}</p>
+            <p class="dev__email">Email: {{profile.email}}</p>
+            <p class="dev__course">Course: {{profile.course}}</p>
+            
+            <a href="#" class="btn btn--sub btn--lg">Change Password</a>
+          </div>
+        </div>
+
+      </div>
+    
+  </div>
+</main>
+
+{% endblock content %}

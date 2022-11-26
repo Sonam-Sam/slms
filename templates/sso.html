@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="portfolio-block website gradient">
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-md-12 col-lg-5 offset-lg-1 text">
+            <div class="profile-card">
+                <div class="profile-back" style="background-color: rgb(255,182,29);"></div><img src="{% static 'img/sso-male.png' %}" style="width: 145px;">
+                <h3 class="profile-name" style="background-color: rgb(255,182,29);margin-top: 5px;">Mr. Tshering Dorji</h3>
+                <div>
+                    <p class="text-left profile-bio" style="margin-bottom: 0;"><strong>Gender: </strong>Male</p>
+                    <p class="text-left profile-bio" style="margin-bottom: 0;"><strong>Department:</strong> Student Service Officer&nbsp;</p>
+                    <p class="text-left profile-bio" style="margin-bottom: 0;"><strong>Availability:</strong> 9AM - 5PM&nbsp;</p>
+                    <p class="text-left profile-bio" style="margin-bottom: 0;"><strong>Mobile Number:</strong> +975-17390974</p>
+                    <p class="text-left profile-bio" style="margin-bottom: 0;"><strong>Email:</strong> tsheringdorji.gcit@rub.edu.bt</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-5">
+            <div class="profile-card">
+                <div class="profile-back" style="background-color: rgb(255,182,29);"></div><img src="{% static 'img/image%2024.png' %}" style="width: 150px;">
+                <h3 class="profile-name" style="background-color: rgb(255,182,29);margin-top: 5px;">Ms. Tshering Zangmo</h3>
+                <div>
+                    <p class="text-left profile-bio" style="margin-bottom: 0;"><strong>Gender: </strong>Female</p>
+                    <p class="text-left profile-bio" style="margin-bottom: 0;"><strong>Department:</strong> Student Service Officer&nbsp;</p>
+                    <p class="text-left profile-bio" style="margin-bottom: 0;"><strong>Availability:</strong> 9AM - 5PM&nbsp;</p>
+                    <p class="text-left profile-bio" style="margin-bottom: 0;"><strong>Mobile Number:</strong> +975-17626377</p>
+                    <p class="text-left profile-bio" style="margin-bottom: 0;"><strong>Email:</strong> tsheringzangmo.gcit@rub.edu.bt</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ {% endblock content %}

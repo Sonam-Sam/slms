@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+    <div id="wrapper">
+        <div id="sidebar-wrapper" style="background-color: #00160a;">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"> <a href="{% url 'admin' %}">ADMIN</a></li>
+                <li> <a href="{% url 'users' %}">User</a></li>
+                <li> <a href="{% url 'user-documents' %}">Users Documents</a></li>
+                <li> <a href="{% url 'leaverequest' %}">Leave Request</a></li>
+            </ul>
+        </div>
+
+        <div class="page-content-wrapper">
+            <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
+                
+                <main class="profile my-md">
+                    <div class="container">
+                      
+                        <div class="column column--1of3">
+                          <div class="card text-center">
+                            <div class="card__body dev">
+                              <img class="avatar avatar--xl" src="{{ profile.profile_image.url }}" />
+                              <h2 class="dev__name">{{profile.name}}</h2>
+                              <p class="dev__studentid"><b>Student Id:</b> {{profile.username}}</p>
+                              <p class="dev__email"><b>Email:</b> {{profile.email}}</p>
+                              <p class="dev__course"><b>Course:</b> {{profile.course}}</p>
+                              <p class="dev__year"><b>Year:</b> {{profile.year}}</p>
+                              <p class="dev__gender"><b>Gender:</b> {{profile.gender}}</p>
+                              
+                            </div>
+                          </div>
+                  
+                        </div>
+                      
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Main Section -->
+
+<main class="settingsPage profile my-md">
+    <div id="wrapper">
+        <div id="sidebar-wrapper" style="background-color: #00160a;">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"> <a href="{% url 'account' %}">MY ACCOUNT</a></li>
+                <li> <a href="{% url 'leave' %}">Leave Section</a></li>
+                <li> <a href="{% url 'applyleave' %}">Apply Leave</a></li>
+                <li> <a href="{% url 'documents' %}">Documents</a></li>
+            </ul>
+        </div>
+
+        <div class="page-content-wrapper">
+            <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
+                <br>
+                <div class="col-md-12">
+                    <h4>&nbsp;<img src="{% static 'img/Rectangle%2046.png' %}" style="width: 20px;">&nbsp; ACCOUNT</h4>
+                </div><br> <br>
+
+                <div class="container">
+
+                    <div class="column column--1of3">
+                        <div class="card text-center">
+
+                            <div class="card__body dev">
+                                
+                                <a class="tag tag--pill tag--main settings__btn" href="{% url 'edit-account' %}"><i class="im im-edit"></i> Edit Profile</a><br>
+                                <img class="avatar avatar--xl" src="{{ profile.profile_image.url }}" />
+                                <h2 class="dev__name">{{profile.name}}</h2>
+                                <p class="dev__studentid">Student Id: {{profile.username}}</p>
+                                <p class="dev__email">Email: {{profile.email}}</p>
+                                <p class="dev__course">Course: {{profile.course}}</p>
+
+                                <div class="form-group">
+                                    <a href="{% url 'password' %}"><input class="btn" type="submit" value="Change Password" style="background-color: rgb(255,182,29);"></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}
